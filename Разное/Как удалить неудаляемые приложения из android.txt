@@ -1,0 +1,14 @@
+По мотивам этой статьи https://habr.com/ru/companies/vdsina/articles/528550/
+
+* На телефоне должен быть активирован режим отладки по USB (USB Debugging).
+* Скачиваем набор инструментов для Windows, распаковываем в удобное место и переходим туда через виндовую консоль.
+  Адрес для винды: https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+  Андер для мака:  https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
+* Все последующие действия не удаляют приложения, а отключают их. Они остаются внутри телефона
+  и после сброса на заводские настройки снова появляются. Кроме того, после обновления прошивки
+  они обратно активируются. Зато в целом не получится брикнуть телефон.
+* Команда для получения списка всех установленных программ:
+  adb shell pm list packages
+  Выводит названия программ в виде пакетов com.funbase.xradio
+* Команда для удаления программы
+  adb shell pm uninstall -k –user 0 com.facebook.katana
